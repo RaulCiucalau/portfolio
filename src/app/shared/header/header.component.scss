@@ -1,0 +1,38 @@
+* {
+    color: #E15544;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    gap : 48px;
+    a {
+        text-decoration: none;
+        font-size: 23px;
+        font-weight: 500;
+    }
+}
+
+.header-links-container {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+}
+
+.page-sections {
+    display: flex;
+    gap: 32px;
+}
+
+.translate-container {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    cursor: pointer;
+    a {
+        font-weight: 700;
+        font-size: 18px;
+    }
+}
