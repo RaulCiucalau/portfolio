@@ -1,0 +1,27 @@
+.main-container {
+    padding-left: 105px;
+    padding-right: 109px;
+
+    h2 {
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 54px;
+        line-height: 120%;
+        color: #E15544;
+    }
+}
+
+.content {
+    width: 1219px;
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 32px;
+        row-gap: 100px;
+        margin-top: 40px;
+        align-content: stretch;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
