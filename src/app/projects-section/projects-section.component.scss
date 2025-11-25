@@ -9,7 +9,7 @@
     flex-direction: column;
     gap: 64px;
 
-    h1 {
+    .title-section {
         color: #E15544;
         font-weight: 500;
         font-size: 54px;
@@ -28,7 +28,6 @@
 }
 
 .project-info {
-    width: 498px;
     position: relative;
     bottom: 51px;
     color: #02F4BF;
@@ -56,8 +55,8 @@
 }
 
 .project-img {
-    width: 545px;
-    height: 371px;
+    width: 580px;
+
 }
 
 .project-links {
