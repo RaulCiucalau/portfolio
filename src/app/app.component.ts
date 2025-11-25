@@ -7,11 +7,24 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { WhymeSectionComponent } from './whyme-section/whyme-section.component';
 import { MyskillsSectionComponent } from './myskills-section/myskills-section.component';
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
+import { ReferencesSectionComponent } from './references-section/references-section.component';
+import { ContactSectionComponent } from './contact-section/contact-section.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HeroSectionComponent, WhymeSectionComponent, MyskillsSectionComponent, ProjectsSectionComponent],
+  imports: [
+    CommonModule, 
+    RouterOutlet, 
+    HeaderComponent, 
+    FooterComponent, 
+    HeroSectionComponent, 
+    WhymeSectionComponent, 
+    MyskillsSectionComponent, 
+    ProjectsSectionComponent,
+    ReferencesSectionComponent,
+    ContactSectionComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
