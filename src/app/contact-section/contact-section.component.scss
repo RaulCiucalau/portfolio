@@ -85,9 +85,9 @@
 }
 
 .textarea-field {
-            width: 637px;
-            resize: none;
-        }
+    width: 637px;
+    resize: none;
+}
 
 .contact-form {
     display: flex;
@@ -121,61 +121,51 @@
             border-color: #E15544;
         }
     }
+}
 
-    .form-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+}
 
-        .privacy-check {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+.privacy-check {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-            input[type="checkbox"] {
-                width: 18px;
-                height: 18px;
-                accent-color: #02F4BF;
-                cursor: pointer;
-            }
+    label {
+        color: #02F4BF;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
 
-            label {
-                color: #02F4BF;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 120%;
-                cursor: pointer;
-
-                a {
-                    color: #E15544;
-                    text-decoration: none;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-
-        .send-button {
-            background: transparent;
-            border: 1px solid #02F4BF;
+        a {
             color: #E15544;
-            font-family: 'Roboto Mono';
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 120%;
-            padding: 15px 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-            &:hover {
-                background: #02F4BF;
-                color: #0B042D;
-            }
+            text-decoration: none;
         }
     }
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+
+.send-button {
+    width: 104px;
+    height: 52px;
+    border-width: 1px;
+    padding-top: 15px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    border: 1px solid #827B7B;
+    color: #827B7B;
+    cursor: pointer;
 }
 
 .scroll-up {
