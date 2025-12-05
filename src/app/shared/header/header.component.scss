@@ -7,10 +7,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 92px;
+    height: 100px;
     padding-block: 24px;
     padding-inline: 140px;
     gap: 58px;
+    max-width: 1440px;
+    width: 100%;
 
     a {
         text-decoration: none;

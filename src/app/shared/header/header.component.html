@@ -1,16 +1,20 @@
 <header>
     <div class="header-links-container">
-        <div class="logo-title">&lt;RC&gt;</div>
+        <a (click)="navigateToSection($event, 'main')" style="cursor: pointer;">
+            <div class="logo-title">&lt;RC&gt;</div>
+        </a>
         <div class="page-sections">
-            <a href="#whyme">{{ 'header.whyme' | translate }}</a>
-            <a href="#myskills">{{ 'header.skills' | translate }}</a>
-            <a href="#projects">{{ 'header.projects' | translate }}</a>
-            <a href="#contact">{{ 'header.contact' | translate }}</a>
+            <a (click)="navigateToSection($event, 'whyme')" style="cursor: pointer;">{{ 'header.whyme' | translate }}</a>
+            <a (click)="navigateToSection($event, 'myskills')" style="cursor: pointer;">{{ 'header.skills' | translate }}</a>
+            <a (click)="navigateToSection($event, 'projects')" style="cursor: pointer;">{{ 'header.projects' | translate }}</a>
+            <a (click)="navigateToSection($event, 'contact')" style="cursor: pointer;">{{ 'header.contact' | translate }}</a>
         </div>
     </div>
     <div class="translate-container">
-        <a class="translate" (click)="switchLanguage('de')" [class.active]="translationService.getCurrentLanguage() === 'de'">DE</a>
+        <a class="translate" (click)="switchLanguage('de')"
+            [class.active]="translationService.getCurrentLanguage() === 'de'">DE</a>
         <span>|</span>
-        <a class="english-version" (click)="switchLanguage('en')" [class.active]="translationService.getCurrentLanguage() === 'en'">EN</a>
+        <a class="english-version" (click)="switchLanguage('en')"
+            [class.active]="translationService.getCurrentLanguage() === 'en'">EN</a>
     </div>
 </header>

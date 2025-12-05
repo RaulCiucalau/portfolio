@@ -32,8 +32,9 @@
             </form>
             <div class="form-footer">
                 <div class="privacy-check">
-                    <div class="checkbox"></div>
-                    <label for="privacy">{{ 'contact.privacy' | translate }}</label>
+                    <input type="checkbox" id="privacy" class="checkbox-input">
+                    <label for="privacy" class="checkbox"></label>
+                    <span class="checkbox-label" [innerHTML]="'contact.privacy' | translate"></span>
                 </div>
                 <span class="send-button">Send</span>
             </div>

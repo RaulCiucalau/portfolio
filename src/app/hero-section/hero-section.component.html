@@ -2,7 +2,7 @@
     <div class="main-container">
         <div class="content">
             <a href="#contact">
-                <div class="contact-button">{{ 'hero.button' | translate }}</div>
+                <div class="contact-button" [class.english]="translationService.getCurrentLanguage() === 'en'">{{ 'hero.button' | translate }}</div>
             </a>
             <a href="#whyme"><img class="arrow-down" src="./assets/hero-section/arrow-down.svg" alt="Arrow Down"></a>
             <div class="title">

@@ -49,7 +49,7 @@ export class TranslationService {
       'contact.form.name': 'Your Name',
       'contact.form.email': 'Your Email',
       'contact.form.message': 'Your Message',
-      'contact.privacy': "I've read the privacy policy and agree to the processing of my data as outlined.",
+      'contact.privacy': 'I\'ve read the <a href="/legal-notice">privacy policy</a> and agree to the processing of my data as outlined.',
       'contact.send': 'Send',
       
       // Header
@@ -97,7 +97,7 @@ export class TranslationService {
       'contact.form.name': 'Dein Name',
       'contact.form.email': 'Deine E-Mail',
       'contact.form.message': 'Deine Nachricht',
-      'contact.privacy': 'Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.',
+      'contact.privacy': 'Ich habe die <a class="checkbox-link" href="/legal-notice">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.',
       'contact.send': 'Senden',
       
       // Header

@@ -30,12 +30,12 @@
         max-width: 600px;
         gap: 24px;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
 
         h1 {
             color: #E15544;
             font-weight: 500;
-            font-size: 54px;
+            font-size: 50px;
             line-height: 120%;
             display: flex;
             align-items: center;
@@ -161,26 +161,43 @@
     gap: 5px;
     cursor: pointer;
 
+    .checkbox-input {
+        display: none;
+    }
+
     .checkbox {
         background-image: url("/assets/contact-section/check_box_outline_blank.svg");
         width: 24px;
         height: 24px;
         background-size: cover;
         background-repeat: no-repeat;
+        cursor: pointer;
     }
 
-    &:hover .checkbox {
+    .checkbox-input:hover + .checkbox {
         background-image: url("/assets/contact-section/check_box_outline_hover.svg");
     }
 
-    label {
+    .checkbox:hover {
+        background-image: url("/assets/contact-section/check_box_outline_hover.svg");
+    }
+
+    .checkbox-input:focus + .checkbox {
+        background-image: url("/assets/contact-section/check-box-focus.svg");
+    }
+
+    .checkbox-input:checked + .checkbox {
+        background-image: url("/assets/contact-section/check-box-focus.svg");
+    }
+
+    .checkbox-label {
         color: #02F4BF;
         font-weight: 400;
         font-size: 14px;
         line-height: 120%;
         cursor: pointer;
 
-        a {
+        ::ng-deep a {
             color: #E15544;
             text-decoration: none;
 

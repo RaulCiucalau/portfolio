@@ -44,6 +44,10 @@
     justify-content: center;
     gap: 10px;
 
+    &.english {
+        height: 172px;
+    }
+
     &:hover {
         color: #02F4BF;
         transition: ease-out 300ms;
