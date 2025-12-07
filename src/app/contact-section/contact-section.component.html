@@ -23,21 +23,60 @@
 
 
             </div>
-            <form class="contact-form">
-                <div class="form-row">
-                    <input type="text" placeholder="Your Name" class="input-field" required>
-                    <input type="email" placeholder="Your Email" class="input-field" required>
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
+                <div class="form-inputs">
+                    <div class="form-row">
+                        <div class="input-wrapper">
+                            <input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text"
+                                [placeholder]="name.invalid && name.touched ? 'Your name is required' : ('contact.form.name' | translate)" 
+                                [class.error]="name.invalid && name.touched"
+                                [class.valid]="name.valid && name.touched"
+                                class="input-field" required>
+                            @if (name.invalid && name.touched) {
+                                <img src="./assets/contact-section/icons/warning-icon.svg" alt="Warning" class="warning-icon">
+                            }
+                            @if (name.valid && name.touched) {
+                                <img src="./assets/contact-section/icons/done-icon.svg" alt="Valid" class="done-icon">
+                            }
+                        </div>
+                        <div class="input-wrapper">
+                            <input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email"
+                                [placeholder]="email.invalid && email.touched ? 'Your email is required' : ('contact.form.email' | translate)" 
+                                [class.error]="email.invalid && email.touched"
+                                [class.valid]="email.valid && email.touched"
+                                class="input-field" required
+                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                            @if (email.invalid && email.touched) {
+                                <img src="./assets/contact-section/icons/warning-icon.svg" alt="Warning" class="warning-icon">
+                            }
+                            @if (email.valid && email.touched) {
+                                <img src="./assets/contact-section/icons/done-icon.svg" alt="Valid" class="done-icon">
+                            }
+                        </div>
+                    </div>
+                    <div class="textarea-wrapper">
+                        <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" name="message"
+                            [placeholder]="message.invalid && message.touched ? 'Your message is required' : ('contact.form.message' | translate)" 
+                            [class.error]="message.invalid && message.touched"
+                            [class.valid]="message.valid && message.touched"
+                            class="textarea-field" required></textarea>
+                        @if (message.invalid && message.touched) {
+                            <img src="./assets/contact-section/icons/warning-icon.svg" alt="Warning" class="warning-icon">
+                        }
+                        @if (message.valid && message.touched) {
+                            <img src="./assets/contact-section/icons/done-icon.svg" alt="Valid" class="done-icon">
+                        }
+                    </div>
                 </div>
-                <textarea placeholder="Your Message" class="textarea-field" required></textarea>
+                <div class="form-footer">
+                    <div class="privacy-check">
+                        <input type="checkbox" id="privacy" class="checkbox-input" required>
+                        <label for="privacy" class="checkbox"></label>
+                        <span class="checkbox-label" [innerHTML]="'contact.privacy' | translate"></span>
+                    </div>
+                    <button type="submit" class="send-button">{{ 'contact.send' | translate }}</button>
+                </div>
             </form>
-            <div class="form-footer">
-                <div class="privacy-check">
-                    <input type="checkbox" id="privacy" class="checkbox-input">
-                    <label for="privacy" class="checkbox"></label>
-                    <span class="checkbox-label" [innerHTML]="'contact.privacy' | translate"></span>
-                </div>
-                <span class="send-button">Send</span>
-            </div>
         </div>
     </div>
 </section>
