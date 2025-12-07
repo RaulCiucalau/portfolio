@@ -19,6 +19,8 @@ export class ContactSectionComponent {
     message: ''
   };
 
+  privacyAccepted = false;
+
   mailTest = true;
 
   post = {

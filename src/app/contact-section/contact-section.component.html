@@ -70,11 +70,11 @@
                 </div>
                 <div class="form-footer">
                     <div class="privacy-check">
-                        <input type="checkbox" id="privacy" class="checkbox-input" required>
+                        <input [(ngModel)]="privacyAccepted" type="checkbox" id="privacy" name="privacy" class="checkbox-input" required>
                         <label for="privacy" class="checkbox"></label>
                         <span class="checkbox-label" [innerHTML]="'contact.privacy' | translate"></span>
                     </div>
-                    <button type="submit" class="send-button">{{ 'contact.send' | translate }}</button>
+                    <button type="submit" class="send-button" [class.enabled]="privacyAccepted" [disabled]="!privacyAccepted">{{ 'contact.send' | translate }}</button>
                 </div>
             </form>
         </div>
