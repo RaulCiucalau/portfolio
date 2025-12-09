@@ -4,17 +4,20 @@
 }
 
 .main-container {
-    padding-left: 105px;
-    padding-right: 113px;
+    padding-left: clamp(10px, 5vw, 105px);
+    padding-right: clamp(10px, 5vw, 113px);
+    box-sizing: border-box;
 }
 
 .content {
     display: flex;
     align-items: center;
-    gap: 42px;
+    gap: clamp(20px, 4vw, 42px);
 
     .photo1 {
-        height: 452px;
+        height: clamp(300px, 30vw, 452px);
+        max-width: 50%;
+        object-fit: cover;
     }
 }
 
@@ -30,13 +33,13 @@
         font-family: 'Roboto Mono';
         font-weight: 500;
         font-style: Medium;
-        font-size: 54px;
+        font-size: clamp(28px, 4vw, 54px);
         line-height: 120%;
         letter-spacing: 0%;
         text-align: right;
         color: #E15544;
         margin: 0;
-        margin-bottom: 29px;
+        margin-bottom: clamp(15px, 2vw, 29px);
     }
 }
 
@@ -54,18 +57,19 @@
     p {
         font-family: 'Roboto Mono';
         font-weight: 400;
-        font-size: 16px;
+        font-size: clamp(14px, 1.2vw, 16px);
         line-height: 120%;
-        letter-spacing: 0%;
-        text-align: right;
+
         color: #02F4BF;
         margin: 0;
-        width: 685px;
+        max-width: 685px;
+        width: 100%;
     }
 }
 
 .about-me {
-    width: 568px;
+    max-width: 568px;
+    width: 100%;
 }
 
 .about-me-text {
@@ -73,17 +77,17 @@
         color: #E15544;
         font-weight: 700;
         font-style: Bold;
-        font-size: 48px;
+        font-size: clamp(24px, 3.5vw, 48px);
         line-height: 120%;
         margin: 0;
     }
 
     .text {
         font-weight: 400;
-        font-size: 18px;
+        font-size: clamp(15px, 1.3vw, 18px);
         line-height: 120%;
         color: #02F4BF;
-        width: 192px;
+        max-width: 192px;
     }
 }
 
@@ -183,7 +187,7 @@
     color: #0B042D;
     padding: 15px 25px;
     background-color: #02F4BF;
-    font-size: 18px;
+    font-size: clamp(16px, 1.3vw, 18px);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -194,5 +198,203 @@
     &:hover {
         font-weight: 400;
         color: #E15544;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .photo1 {
+        display: none;
+    }
+
+    .info-container {
+        align-items: center;
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .text {
+        align-items: center;
+    }
+
+    .description {
+        justify-content: center;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .about-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row {
+        width: 100%;
+        max-width: 568px;
+        justify-content: center;
+        gap: clamp(20px, 5vw, 64px);
+        flex-wrap: wrap;
+
+        &.row--relocate {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .laptop-row {
+        padding-left: 0;
+        gap: clamp(20px, 8vw, 132px);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .content {
+        .photo1 {
+            height: clamp(250px, 60vw, 400px);
+        }
+    }
+
+    .info-container {
+        gap: 20px;
+        align-items: center;
+
+        > a {
+            order: 4;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .text {
+        order: 1;
+    }
+
+    .description::after {
+        order: 2;
+    }
+
+    .about-me {
+        order: 3;
+        width: 100%;
+    }
+
+    .contact-button {
+        align-self: center;
+        width: fit-content;
+        padding-inline: 20px;
+        padding-block: 12px;
+        font-weight: 400;
+    }
+
+    .description::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 58px;
+        background-image: url('/assets/whyme-section/arrow-down-right.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-top: 20px;
+        order: 2;
+        right: 42%;
+        position: relative;
+    }
+
+    .description {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
+        width: 100%;
+        align-items: center;
+
+        &.row--relocate img {
+            display: none;
+        }
+
+        span {
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    .about-me-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .card {
+        flex-direction: row;
+        gap: 11px;
+        text-align: left;
+        justify-content: center;
+
+        .text {
+            max-width: 100%;
+        }
+    }
+
+    .laptop-row {
+        gap: 20px;
+    }
+
+    .card--relocate {
+        width: 233px !important;
+    }
+
+    .card-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 7px;
+
+        .card {
+            gap: 7px;
+            width: 100%;
+        }
+    }
+
+    .location-icon {
+        width: 26px !important;
+    }
+
+    .baggage-icon {
+        height: 42px !important;
+        width: 28px !important;
+    }
+
+    .laptop-icon {
+        height: 44px !important;
+        width: 61px !important;
+    }
+
+    .d-none {
+        display: none !important;
+    }
+
+    .arrow-down-left {
+        display: none;
+    }
+
+    .arrow-up {
+        display: none;
     }
 }
