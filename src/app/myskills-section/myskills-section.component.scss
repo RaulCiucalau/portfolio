@@ -1,31 +1,38 @@
 .main-container {
-    padding-left: 105px;
-    padding-right: 109px;
+    padding-left: clamp(10px, 5vw, 105px);
+    padding-right: clamp(10px, 5vw, 109px);
+    box-sizing: border-box;
 
     h2 {
         font-weight: 500;
         font-style: Medium;
-        font-size: 54px;
+        font-size: clamp(32px, 4vw, 54px);
         line-height: 120%;
         color: #E15544;
     }
 }
 
 .content {
-    width: 1219px;
+    max-width: 1219px;
+    width: 100%;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 32px;
-    row-gap: 100px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: clamp(100px, 3vw, 32px);
+    row-gap: clamp(50px, 8vw, 100px);
+    margin-top: clamp(20px, 3vw, 40px);
     align-content: stretch;
     justify-content: flex-start;
     align-items: center;
 
     img {
+        width: 100%;
+        max-width: 100px;
+        height: auto;
+        justify-self: center;
+
         &:hover {
             transform: scale(1.1);
             transition: transform 250ms ease;
@@ -33,9 +40,118 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        justify-items: center;
+
+        img {
+            max-width: 62px;
+        }
+
+        img[src*="icon-angular"] {
+            content: url('/assets/myskills-section/icons/icon-blank-angular.svg');
+        }
+
+        img[src*="icon-typescript"] {
+            content: url('/assets/myskills-section/icons/icon-blank-typescript.svg');
+        }
+
+        img[src*="icon-javascript"] {
+            content: url('/assets/myskills-section/icons/icon-blank-javascript.svg');
+        }
+
+        img[src*="icon-html"] {
+            content: url('/assets/myskills-section/icons/icon-blank-html.svg');
+        }
+
+        img[src*="icon-css"] {
+            content: url('/assets/myskills-section/icons/icon-blank-css.svg');
+        }
+
+        img[src*="icon-api"] {
+            content: url('/assets/myskills-section/icons/icon-blank-api.svg');
+        }
+
+        img[src*="icon-firebase"] {
+            content: url('/assets/myskills-section/icons/icon-blank-firebase.svg');
+        }
+
+        img[src*="icon-git"] {
+            content: url('/assets/myskills-section/icons/icon-blank-git.svg');
+        }
+
+        img[src*="icon-scrum"] {
+            content: url('/assets/myskills-section/icons/icon-blank-scrum.svg');
+        }
+
+        img[src*="icon-materialdesign"] {
+            content: url('/assets/myskills-section/icons/icon-blank-materialdesign.svg');
+        }
+
+        .challenge-me-icon {
+            content: url('/assets/myskills-section/icons/icon-blank-challenge-me.svg') !important;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .main-container {
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: clamp(12px, 4vw, 20px);
+        row-gap: clamp(30px, 6vw, 50px);
+
+        img {
+            max-width: 45px;
+
+            &:hover {
+                transform: none !important;
+            }
+        }
+    }
+
+    .challenge-me-wrapper {
+        &:hover {
+            .challenge-me-icon {
+                transform: none !important;
+            }
+
+            .challenge-me-text {
+                opacity: 0;
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+        .challenge-me-text {
+            font-size: clamp(12px, 3vw, 14px);
+            padding: 8px 12px;
+            white-space: normal;
+            max-width: 200px;
+        }
+    }
+}
+
 .challenge-me-wrapper {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 
     .challenge-me-text {
         position: absolute;
