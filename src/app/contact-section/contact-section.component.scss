@@ -4,8 +4,7 @@
 }
 
 .main-container {
-    padding-left: 131px;
-    padding-right: 125px;
+    padding-inline: 131px;
 }
 
 .content {
@@ -14,7 +13,7 @@
 
 .contact-text {
     display: flex;
-    gap: 40px;
+    gap: 66px;
     align-items: center;
 
 }
@@ -22,7 +21,6 @@
 .contact-header {
     display: flex;
     flex-direction: column;
-    width: 1015px;
     margin-bottom: 24px;
     gap: 25px;
 
@@ -48,15 +46,15 @@
         }
     }
 
-    .contact-text {
-        .description {
-            color: #02F4BF;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 140%;
-            width: 507px;
-        }
+
+    .description {
+        color: #02F4BF;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        width: 472px;
     }
+
 
     .contact-info {
         display: flex;
@@ -90,8 +88,7 @@
 }
 
 .arrow-up {
-    position: relative;
-    left: 254px;
+    left: clamp(0px, 20vw, 254px);
     cursor: pointer;
     transition: transform 0.3s ease;
     padding: 4px;
@@ -103,11 +100,12 @@
 }
 
 .input-field {
-    width: 507px;
+    width: 500px;
 }
 
 .textarea-field {
-    width: 637px;
+    width: 630px;
+    max-width: 100%;
     height: 134px;
     resize: none;
 }
@@ -119,7 +117,7 @@
 
     .form-inputs {
         display: flex;
-        gap: 32px;
+        justify-content: space-between;
     }
 
     .form-row {
@@ -135,7 +133,7 @@
         .warning-icon,
         .done-icon {
             position: absolute;
-            right: 15px;
+            right: 6px;
             top: 50%;
             transform: translateY(-50%);
             width: 24px;
@@ -145,9 +143,10 @@
     }
 
     .textarea-wrapper {
+
         .warning-icon,
         .done-icon {
-            top: 20px;
+            top: 14px;
             transform: none;
         }
     }
@@ -161,7 +160,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 120%;
-        padding: 15px 20px;
+        padding: 15px 32px;
 
         &::placeholder {
             color: #02F4BF;
@@ -211,14 +210,22 @@
 
     .checkbox {
         background-image: url("/assets/contact-section/check_box_outline_blank.svg");
-        width: 24px;
+        width: 30px;
         height: 24px;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         cursor: pointer;
     }
 
-    .checkbox-input:hover + .checkbox {
+    .checkbox-input:checked+.checkbox {
+        background-image: url("/assets/contact-section/check-box-focus.svg") !important;
+    }
+
+    .checkbox-input:checked:hover+.checkbox {
+        background-image: url("/assets/contact-section/check-box-focus.svg") !important;
+    }
+
+    .checkbox-input:hover+.checkbox {
         background-image: url("/assets/contact-section/check_box_outline_hover.svg");
     }
 
@@ -226,18 +233,14 @@
         background-image: url("/assets/contact-section/check_box_outline_hover.svg");
     }
 
-    .checkbox-input:focus + .checkbox {
-        background-image: url("/assets/contact-section/check-box-focus.svg");
-    }
-
-    .checkbox-input:checked + .checkbox {
+    .checkbox-input:focus+.checkbox {
         background-image: url("/assets/contact-section/check-box-focus.svg");
     }
 
     .checkbox-label {
         color: #02F4BF;
         font-weight: 400;
-        font-size: 14px;
+        font-size: clamp(12px, 1.8vw, 18px);
         line-height: 120%;
         cursor: pointer;
 
@@ -302,12 +305,60 @@
     }
 }
 
+.wrapper-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.d-none-mobile {
+    display: none !important;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    word-break: break-all;
+}
+
+@media (max-width: 1434px) {
+    .main-container {
+        padding-inline: clamp(20px, 10vw, 131px);
+    }
+
+    .form-inputs {
+        flex-direction: column;
+        gap: 32px;
+        align-items: flex-start;
+    }
+
+    .contact-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .contact-info {
+        position: static !important;
+    }
+}
+
 @media (max-width: 1024px) {
     .main-container {
         padding-inline: clamp(10px, 5vw, 20px);
     }
 
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     .contact-header {
+        align-items: center;
+        order: 1;
         width: 100%;
 
         .title-section h1 {
@@ -315,71 +366,126 @@
         }
     }
 
+    .contact-form {
+        order: 2;
+        width: 100%;
+    }
+
+    .contact-text {
+        display: flex;
+        align-items: center;
+        order: 1;
+    }
+
     .contact-text .description {
         width: 100%;
+    }
+
+    .form-inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title-section {
+        img {
+            display: none;
+        }
+    }
+
+    .contact-info {
+        display: flex;
+        align-items: center;
+        order: 3;
+        gap: 18px;
+        flex-direction: column;
+    }
+
+    .textarea-field {
+        width: 500px;
+    }
+
+    .form-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .arrow-up {
+        position: static;
+        margin: 0;
+    }
+
+    .d-none-text {
+        display: none !important;
+    }
+
+    .wrapper-text-mobile {
+        color: #02F4BF;
+        order: 2;
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        a {
+            width: 30px;
+            height: 58px;
+        }
+    }
+
+    .email {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .phone {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .arrow-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-inputs {
+        width: 100%;
+        gap: 16px !important;
+    }
+
+    .textarea-field {
+        width: 100%;
+        height: 144px;
     }
 
     .input-field {
         width: 100%;
     }
 
-    .textarea-field {
+    .form-row {
+        width: 100%;
+        gap: 16px !important;
+    }
+
+    .textarea-wrapper {
         width: 100%;
     }
 
-    .form-inputs {
-        flex-direction: column;
+    .description {
+        width: 100% !important;
     }
-}
 
-@media (max-width: 767px) {
-    .contact-header {
-        .title-section h1 {
-            font-size: clamp(28px, 7vw, 32px);
-        }
-
-        .contact-text .description {
-            font-size: clamp(14px, 3vw, 16px);
-        }
+    .send-button {
+        min-width: auto;
+        width: 79px;
+        height: 43px;
     }
 
     .contact-form {
-        gap: clamp(20px, 4vw, 32px);
-    }
-
-    .form-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-header {
-        .title-section h1 {
-            font-size: clamp(24px, 6vw, 28px);
-            
-            .arrow-icon {
-                width: 40px;
-            }
-        }
-    }
-
-    .arrow-up {
-        left: 0;
-    }
-}
-
-@media (max-width: 320px) {
-    .main-container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .contact-form {
-        gap: 20px;
-    }
-
-    .privacy-check .checkbox-label {
-        font-size: 12px;
+        gap: 16px !important;
     }
 }

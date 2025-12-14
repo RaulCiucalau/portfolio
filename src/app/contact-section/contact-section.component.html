@@ -6,19 +6,22 @@
                     <h1>{{ 'contact.title' | translate }}</h1>
                     <img src="./assets/contact-section/arrow-right-down.svg" alt="">
                 </div>
-                <div class="contact-text">
-                    <p class="description">{{ 'contact.description' | translate }}</p>
-                    <div class="contact-info">
-                        <div class="email">
-                            <img src="./assets/contact-section/icons/mail-icon.svg" alt="Email Icon">
-                            <span>E-mail: mustermail&#64;gmail.com</span>
-                        </div>
-                        <div class="phone">
-                            <img src="./assets/contact-section/icons/phone-icon.svg" alt="Phone Icon">
-                            <span>Tel: 0157 123 456 68</span>
+
+                <div class="wrapper-text">
+                    <div class="contact-text">
+                        <p class="description">{{ 'contact.description' | translate }}</p>
+                        <div class="contact-info d-none-text">
+                            <div class="email d-column">
+                                <img src="./assets/contact-section/icons/mail-icon.svg" alt="Email Icon">
+                                <span>E-mail: mustermail&#64;gmail.com</span>
+                            </div>
+                            <div class="phone d-column">
+                                <img src="./assets/contact-section/icons/phone-icon.svg" alt="Phone Icon">
+                                <span>Tel: 0157 123 456 68</span>
+                            </div>
                         </div>
                     </div>
-                    <a href="#main"><img class="arrow-up" src="./assets/contact-section/arrow-up.svg" alt=""></a>
+                    <a href="#main"><img class="arrow-up d-none-text" src="./assets/contact-section/arrow-up.svg" alt=""></a>
                 </div>
 
 
@@ -78,6 +81,23 @@
                         [disabled]="!privacyAccepted">{{ 'contact.send' | translate }}</button>
                 </div>
             </form>
+            <div class="wrapper-text-mobile d-none-mobile">
+                <div class="arrow-container">
+                    <a href="#main"><img class="arrow-up" src="./assets/contact-section/arrow-up.svg" alt=""></a>
+                </div>
+                <div class="contact-text">
+                    <div class="contact-info">
+                        <div class="email d-column">
+                            <img src="./assets/contact-section/icons/mail-icon.svg" alt="Email Icon">
+                            <span>mustermail&#64;gmail.com</span>
+                        </div>
+                        <div class="phone d-column">
+                            <img src="./assets/contact-section/icons/phone-icon.svg" alt="Phone Icon">
+                            <span>0157 123 456 68</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
