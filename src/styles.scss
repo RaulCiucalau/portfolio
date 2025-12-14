@@ -34,6 +34,11 @@ app-root {
     overflow-x: hidden;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 * {
     box-sizing: border-box;
 }
