@@ -64,8 +64,8 @@
 }
 
 .project-img {
-    width: 580px;
-
+    width: clamp(400px, 50vw, 580px);
+    max-width: 100%;
 }
 
 .project-links {
@@ -117,6 +117,31 @@
             color: #E15544;
             transition: ease-in-out 300ms;
         }
+    }
+}
+
+@media (max-width: 1222px) {
+    .project-img {
+        width: clamp(350px, 37vw, 500px);
+        height: clamp(200px, 25vw, 400px);
+    }
+
+    .project-info {
+        h2 {
+            font-size: clamp(32px, 3vw, 48px);
+        }
+
+        h3 {
+            font-size: clamp(16px, 0.5vw, 18px);
+        }
+
+        p {
+            font-size: clamp(16px, 0.5vw, 18px);
+        }
+    }
+
+    .project-card {
+        gap: clamp(24px, 4vw, 48px);
     }
 }
 
