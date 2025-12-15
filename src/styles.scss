@@ -28,14 +28,9 @@ body{
     min-height: 100vh;
 }
 
-app-root {
+.content-wrapper {
     max-width: 1440px;
     width: 100%;
-}
-
-body {
-    display: flex;
-    justify-content: center;
 }
 
 * {

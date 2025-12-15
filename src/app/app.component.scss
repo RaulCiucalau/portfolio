@@ -1,10 +1,14 @@
 app-header {
     position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
     background: linear-gradient(to bottom, #0B042D 63%, transparent);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.d-center {
     display: flex;
     justify-content: center;
 }
