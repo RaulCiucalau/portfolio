@@ -14,17 +14,11 @@ import { ContactSectionComponent } from './contact-section/contact-section.compo
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterOutlet, 
-    HeaderComponent, 
-    FooterComponent, 
-    HeroSectionComponent, 
-    WhymeSectionComponent, 
-    MyskillsSectionComponent, 
-    ProjectsSectionComponent,
-    ReferencesSectionComponent,
-    ContactSectionComponent
-  ],
+    CommonModule,
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
