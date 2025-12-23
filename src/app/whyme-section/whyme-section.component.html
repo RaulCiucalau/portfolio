@@ -1,11 +1,11 @@
 <section id="whyme">
     <div class="main-container">
         <div class="content">
-            <img class="photo1 d-none" src="./assets/whyme-section/IMG_2741.JPG" alt="Photo">
+            <img class="photo1 d-none" src="./assets/whyme-section/IMG_2741.JPG" alt="Photo" data-aos="fade-left" data-aos-delay="100">
             <div class="info-container">
                 <div class="text">
-                    <h2>{{ 'whyme.title' | translate }}</h2>
-                    <div class="description">
+                    <h2 data-aos="fade-up">{{ 'whyme.title' | translate }}</h2>
+                    <div class="description" data-aos="fade-up" data-aos-delay="100">
                         <p>
                             Write some information about yourself that is IT related. Why are you passionate about
                             coding?
@@ -16,14 +16,14 @@
                 </div>
                 <div class="about-me">
                     <div class="about-me-text">
-                        <div class="row">
+                        <div class="row" data-aos="fade-right" data-aos-delay="200">
                             <span [innerHTML]="'whyme.iam' | translate"></span>
                             <div class="card">
                                 <div class="location-icon"></div>
                                 <span class="text">{{ 'whyme.location' | translate }}</span>
                             </div>
                         </div>
-                        <div class="row row--relocate">
+                        <div class="row row--relocate" data-aos="fade-right" data-aos-delay="300">
                             <img src="./assets/whyme-section/arrow-down-right.svg" alt="Arrow Down Right">
                             <div class="card card--relocate">
                                 <div class="baggage-icon"></div>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
 
-                        <div class="row laptop-row">
+                        <div class="row laptop-row" data-aos="fade-right" data-aos-delay="400">
 
                             <div class="card-container">
                                 <div class="card laptop">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#contact"><div class="contact-button">{{ 'whyme.button' | translate }}</div></a>
+                <a href="#contact"><div class="contact-button" data-aos="fade-up" data-aos-delay="500">{{ 'whyme.button' | translate }}</div></a>
             </div>
         </div>
     </div>

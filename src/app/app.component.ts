@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./shared/header/header.component";
@@ -9,6 +9,7 @@ import { MyskillsSectionComponent } from './myskills-section/myskills-section.co
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
 import { ReferencesSectionComponent } from './references-section/references-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,14 @@ import { ContactSectionComponent } from './contact-section/contact-section.compo
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'portofolio';
+
+  ngOnInit() {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+  }
 }
