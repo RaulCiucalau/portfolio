@@ -8,8 +8,7 @@
 
 .main-container {
     height: 554px;
-    padding-left: clamp(10px, 5vw, 100px);
-    padding-right: clamp(10px, 5vw, 100px);
+    padding-inline: clamp(20px, 10vw, 131px);
     box-sizing: border-box;
 }
 
@@ -111,11 +110,6 @@
 }
 
 @media (max-width: 1200px) {
-    .main-container {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
     .photo1 {
         max-width: 494px;
     }

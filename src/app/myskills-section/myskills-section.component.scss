@@ -149,54 +149,6 @@
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         justify-items: center;
-
-        img {
-            max-width: 62px;
-        }
-
-        img[src*="icon-angular"] {
-            content: url('/assets/myskills-section/icons/icon-blank-angular.svg');
-        }
-
-        img[src*="icon-typescript"] {
-            content: url('/assets/myskills-section/icons/icon-blank-typescript.svg');
-        }
-
-        img[src*="icon-javascript"] {
-            content: url('/assets/myskills-section/icons/icon-blank-javascript.svg');
-        }
-
-        img[src*="icon-html"] {
-            content: url('/assets/myskills-section/icons/icon-blank-html.svg');
-        }
-
-        img[src*="icon-css"] {
-            content: url('/assets/myskills-section/icons/icon-blank-css.svg');
-        }
-
-        img[src*="icon-api"] {
-            content: url('/assets/myskills-section/icons/icon-blank-api.svg');
-        }
-
-        img[src*="icon-firebase"] {
-            content: url('/assets/myskills-section/icons/icon-blank-firebase.svg');
-        }
-
-        img[src*="icon-git"] {
-            content: url('/assets/myskills-section/icons/icon-blank-git.svg');
-        }
-
-        img[src*="icon-scrum"] {
-            content: url('/assets/myskills-section/icons/icon-blank-scrum.svg');
-        }
-
-        img[src*="icon-materialdesign"] {
-            content: url('/assets/myskills-section/icons/icon-blank-materialdesign.svg');
-        }
-
-        .challenge-me-icon {
-            content: url('/assets/myskills-section/icons/icon-blank-challenge-me.svg') !important;
-        }
     }
 }
 
@@ -244,7 +196,7 @@
         row-gap: clamp(30px, 6vw, 50px);
 
         img {
-            max-width: 45px;
+            max-width: 80px;
 
             &:hover {
                 transform: none !important;
