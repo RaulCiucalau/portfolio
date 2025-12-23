@@ -30,11 +30,6 @@ export class HeaderComponent {
   switchLanguage(lang: string) {
     this.translationService.setLanguage(lang);
     this.closeMenu();
-    if (lang === 'de') {
-      this.router.navigate(['/de']);
-    } else {
-      this.router.navigate(['/']);
-    }
   }
 
   navigateToSection(event: Event, sectionId: string) {

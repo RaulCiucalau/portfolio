@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslatePipe } from '../pipes/translate.pipe';
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })
