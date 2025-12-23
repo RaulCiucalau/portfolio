@@ -1,22 +1,22 @@
 <footer>
-    <div class="footer-container">
-        <div class="footer-content">
             <div class="logo-container">
                 <div class="logo-title">&lt;RC&gt;</div>
+                <span class="copyright-mobile">© Raul Ciucalau 2025</span>
                 <div class="logo-text">frontend developer</div>
             </div>
-            <span class="copyright">© Raul Ciucalau 2025</span>
+            <div class="footer-middle-part">
+                <span class="copyright">© Raul Ciucalau 2025</span>
+                <div class="legal-links">
+                    <a routerLink="/legal-notice">{{ 'footer.legal' | translate }}</a>
+                    <a routerLink="/legal-notice">{{ 'footer.privacy' | translate }}</a>
+                </div>
+            </div>
             <div class="contact-links">
                 <a target="_blank" href="https://github.com/RaulCiucalau"><img
                         src="./assets/shared/footer/gitithub-button.svg" alt=""></a>
-                <a target="_blank" href="mailto:ciucalauraul@gmail.com"><img src="./assets/shared/footer/email-button.svg" alt=""></a>
+                <a target="_blank" href="mailto:ciucalauraul@gmail.com"><img
+                        src="./assets/shared/footer/email-button.svg" alt=""></a>
                 <a target="_blank" href="https://www.linkedin.com/in/raul-c-a5b9552b2"><img
                         src="./assets/shared/footer/linkedin-button.svg" alt=""></a>
             </div>
-        </div>
-        <div class="legal-links">
-            <a routerLink="/legal-notice">{{ 'footer.legal' | translate }}</a>
-            <a routerLink="/legal-notice">{{ 'footer.privacy' | translate }}</a>
-        </div>
-    </div>
 </footer>
