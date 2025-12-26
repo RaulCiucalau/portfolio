@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./shared/header/header.component";
 import { FooterComponent } from './shared/footer/footer.component';
@@ -26,11 +26,15 @@ import AOS from 'aos';
 export class AppComponent implements OnInit {
   title = 'portofolio';
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngOnInit() {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+    }
   }
 }
