@@ -2,12 +2,12 @@
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case ("OPTIONS"): //Allow preflighting to take place.
-        header("Access-Control-Allow-Origin: https://raul-ciucalau.developerakademie.net");
+        header("Access-Control-Allow-Origin: https://raul-ciucalau.de");
         header("Access-Control-Allow-Methods: POST");
         header("Access-Control-Allow-Headers: content-type");
         exit;
         case("POST"): //Send the email;
-            header("Access-Control-Allow-Origin: https://raul-ciucalau.developerakademie.net");
+            header("Access-Control-Allow-Origin: https://raul-ciucalau.de");
             header("Content-Type: text/plain");
             
             // Payload is not send to $_POST Variable,
@@ -27,7 +27,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $headers   = array();
             $headers[] = 'MIME-Version: 1.0';
             $headers[] = 'Content-type: text/html; charset=utf-8';
-            $headers[] = "From: noreply@raul-ciucalau.developerakademie.net";
+            $headers[] = "From: noreply@raul-ciucalau.de";
             $headers[] = "Reply-To: " . $email;
 
             $mailSent = mail($recipient, $subject, $message, implode("\r\n", $headers));
