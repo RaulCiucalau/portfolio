@@ -26,13 +26,12 @@ export class ContactSectionComponent {
   emailSent = false;
 
   post = {
-    endPoint: 'https://raul-ciucalau.developerakademie.net/sendMail.php',
+    endPoint: 'https://raul-ciucalau.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'application/json',
       },
-      responseType: 'text' as 'text',
     },
   };
 

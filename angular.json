@@ -31,7 +31,8 @@
               {
                 "glob": "**/*",
                 "input": "Projects",
-                "output": "Projects"
+                "output": "Projects",
+                "ignore": ["**/.vscode/**", "**/.git/**", "**/node_modules/**"]
               }
             ],
             "styles": [
@@ -54,8 +55,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "8kb",
+                  "maximumError": "10kb"
                 }
               ],
               "outputHashing": "all"
@@ -101,7 +102,8 @@
               {
                 "glob": "**/*",
                 "input": "Projects",
-                "output": "Projects"
+                "output": "Projects",
+                "ignore": ["**/.vscode/**", "**/.git/**", "**/node_modules/**"]
               }
             ],
             "styles": [
