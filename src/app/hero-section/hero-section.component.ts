@@ -1,3 +1,4 @@
+// Hero section component displaying main introduction and call-to-action
 import { Component } from '@angular/core';
 import { TranslatePipe } from '../pipes/translate.pipe';
 import { TranslationService } from '../services/translation.service';
